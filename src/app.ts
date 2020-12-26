@@ -2,12 +2,13 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import authRoutes from './routes/auth.routes';
-import productsRoutes from './routes/products.routes'
+import productsRoutes from './routes/products.routes';
+import config from './config'
 
 const app = express();
 
 //settings
-app.set('port', 4000);
+app.set('port', config.PORT);
 
 //middlewares
 app.use(morgan('dev'));
