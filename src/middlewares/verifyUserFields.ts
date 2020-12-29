@@ -6,7 +6,8 @@ export const verifyUserCreate = async(req: Request, res: Response, next: NextFun
     await createUserSchema.validateAsync(req.body)
     next();
   } catch (error) {
-    return res.status(400).json({error: error})
+    console.log(error)
+    return res.status(400).json({error: error.details[0].message})
   }
 }
 

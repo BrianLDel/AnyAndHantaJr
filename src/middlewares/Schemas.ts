@@ -7,9 +7,9 @@ export const createProductSchema = Joi.object({
 });
 
 export const updateProductSchema = Joi.object({
-  name: Joi.string().optional(),
+  name: Joi.string().required().min(2),
   description: Joi.string().optional(),
-  price: Joi.string().optional()
+  price: Joi.number().required()
 })
 
 export const createUserSchema = Joi.object({
